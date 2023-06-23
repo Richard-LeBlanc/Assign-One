@@ -86,7 +86,7 @@ h3{
 .GridBox > .Subject > div + div > p{
     font-size: 30px;
 }
-.GridBox > .Subject > div > .Title{
+.GridBox > .Subject > div > .Title > a{
     color: aqua;
     font-family: 'Manjari', sans-serif;
     font-size: 200px;
@@ -162,8 +162,9 @@ h3{
 .GridBox > .BillCred > div + div + div > h3{
     order: 1;
 }
-.GridBox > .BillCred > div + div + div > p{
+.GridBox > .BillCred > div + div + div > a{
     order: 2;
+    height: auto;
 }
 .GridBox > .BillCred > div + div + div > img{
     order: 3;

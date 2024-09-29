@@ -1,0 +1,171 @@
+/*Lets surround the poster with a black color to match the comparisons exterior*/
+html{
+    background-color: #0f0f0f;
+}
+body{
+    margin: 0px;
+}
+
+/*Give our frequently used text it's font type and remove margins and padding*/
+p, h3, h4{
+    font-family: 'Roboto+Slab', serif;
+    color:#e0e0e0;
+    margin: 0px;
+    padding: 0px;
+}
+/*This color seems to match the blue of the writing on the comparison's background*/
+h4{
+    color:#3A6AEB;
+}
+h3{
+    font-size: 25px;
+}
+/*I have laid it out with 7 sections because I had 5 "divs"
+ in the header and wanted space to be empty on either side.
+ There was likely a simpler way, but did not come to me.*/
+.GridBox{   /* made a grid container out of the entire space, defining some dead-space and where each section will live*/
+    display: grid;
+    grid-template-columns: 15% 14% 14% 14% 14% 14% 15%;
+    grid-template-rows: auto;
+    grid-template-areas: ". h h h h h ."
+                         "m m m m m m m"
+                         "f f f f f f f";
+    margin: 0px;
+}
+/*made a grid to let each actor's name at the top have it's own spot, with less space given to the word and*/
+.GridBox > header{
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+    grid-area: h;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 4% 24%;
+    grid-template-rows: auto;
+}
+/*aligned to the end of the container*/
+.GridBox > header > div{
+    height: auto;
+    width: auto;
+    align-items: end;
+}/*Center the text in their grid-box*/
+.GridBox > header > div > p{
+    text-align: center; 
+}
+
+/*Make the text on the first line smaller, in keeping with out comparison*/
+.GridBox > header > div > .Large{
+    font-size: 20px;
+}
+.GridBox > header > div > .Largest{
+    font-size: 30px;
+}
+.GridBox > header > .Small{
+    display:grid;
+    text-align: end;
+}
+/*Make the poster the background of the main element and cover the entire section*/
+.GridBox > .Subject{
+    background-image: url("../img/background2.jpg");
+    background-size:cover;
+    margin: 0 px;
+    grid-area: m;
+}
+/*Creating space*/
+.GridBox > .Subject > div{
+    height: 590px;
+    width: auto;
+}
+/*Cluster the items in a vertical grid*/
+.GridBox > .Subject > div + div{
+    height: auto;
+    display:grid;
+    grid-template-rows: 10% 60% 30%;
+    width: 100%;
+    text-align: center;
+}
+.GridBox > .Subject > div + div > p{
+    font-size: 30px;
+}
+.GridBox > .Subject > div > .Title > a{
+    color: aqua;
+    font-family: 'Manjari', sans-serif;
+    font-size: 200px;
+    margin: 0px;
+    padding: 0px;
+}
+.GridBox > .Subject > div + div + div{
+    height: 160px;
+}
+
+/* create the footer using another grid pattern*/
+.GridBox  > .BillCred{
+    width:100%;
+    height: auto;
+    margin: 10px 0;
+    grid-area: f;
+    display:grid;
+    grid-template-columns: 11% 11% 11% 34% 11% 11% 11%;
+    grid-template-areas: "t t t t t t t" 
+                         "j j j r s s s";
+}
+/*Center writing and make it the appropriate size and color*/
+.GridBox > .BillCred > p{
+    grid-area: t;
+    text-align: center;
+    font-size: 13px;
+    color: #3A6AEB;
+}
+/*Allow different sections to appear smaller*/
+.GridBox > .BillCred > p > .Smallest{
+    font-size: 6px;
+}
+/*Organize the lower sections of the footer grid*/
+.GridBox > .BillCred > div{
+    grid-area: j;
+    height: auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-items: end;
+}
+.GridBox > .BillCred > div > img{
+    width: 100px;
+    height:auto;
+    
+}
+.GridBox > .BillCred > div > img + img + img{
+    width: 50px;
+    height: auto;
+}
+.GridBox > .BillCred > div + div{
+    grid-area: r;
+    width: 100%;
+    height: auto;
+    display: block;
+    text-align: center;
+}
+.GridBox > .BillCred > div + div > p{
+    font-size: 13px;
+    color: #3A6AEB;
+}
+.GridBox > .BillCred > div + div > p > .Smallest{
+    font-size: 6px;
+}
+.GridBox > .BillCred > div + div + div{
+    display: grid;
+    grid-area: s;
+    grid-template-columns: 15% 40% 40%;
+    width:100%;
+    height: auto;
+    justify-items: start;
+}
+/*Had an issue of items appearing out of order*/
+.GridBox > .BillCred > div + div + div > h3{
+    order: 1;
+}
+.GridBox > .BillCred > div + div + div > a{
+    order: 2;
+    height: auto;
+}
+.GridBox > .BillCred > div + div + div > img{
+    order: 3;
+}
